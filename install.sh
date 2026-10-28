@@ -19,6 +19,7 @@ copy_if_absent() {
 copy_if_absent "$SRC/AGENTS.md" AGENTS.md
 copy_if_absent "$SRC/templates/REQUIREMENTS.md" REQUIREMENTS.md
 copy_if_absent "$SRC/templates/DECISIONS.md" DECISIONS.md
+copy_if_absent "$SRC/templates/PLAN.md" PLAN.md
 
 mkdir -p .agents/skills
 for dir in "$SRC"/skills/*/; do

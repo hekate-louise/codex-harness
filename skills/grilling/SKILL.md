@@ -1,30 +1,11 @@
 ---
 name: grilling
-description: Grill the user relentlessly about a plan, decision, or idea. Use when the user wants to stress-test their thinking, or uses any 'grill' trigger phrases.
+description: 사용자가 계획·결정의 허점 점검을 요청할 때 핵심 실패 조건만 짧게 검토한다.
 ---
 
-Interview the user relentlessly until you reach a shared understanding. Map this as a **design tree**: every decision branches into the decisions that hang off it.
+AGENTS.md의 시간·질문 기준을 따른다. 구현을 시작할 때마다 자동으로 인터뷰를 추가하지 않는다.
 
-Work the tree in **rounds**. The **frontier** is every decision whose prerequisites are already settled: the questions you can ask _now_ without guessing at answers you haven't heard yet. Ask the whole frontier in one round: number each question and give your recommended answer. Then wait for the user's answers before the next round.
-
-Format a round like so:
-
-```
-❓ **Q1** - **<question title>**: <question body, might be multiple paragraphs, including multiple choices>
-
-➡️ <your recommended answer>
-
----
-
-❓ **Q2** - **<question title>**: <question body, might be multiple paragraphs, including multiple choices>
-
-➡️ <your recommended answer>
-```
-
-Word each question so "yes" accepts your recommended answer.
-
-Each round the user answers reshapes the tree: settled decisions push the frontier outward and unblock questions that depended on them. Recompute the frontier and ask the next round. A question whose answer depends on another question still open in this round belongs to a _later_ round, not this one.
-
-Finding _facts_ is your job, never the user's. When a frontier question needs a fact from the environment (filesystem, tools, etc.), dispatch a sub-agent to find it; don't ask the user for anything you could look up yourself. Don't block on it: a running exploration is an unsettled prerequisite, so only the questions downstream of it wait for the sub-agent to report; ask the rest of the frontier now. The _decisions_ are the user's: put each to them and wait.
-
-The session is done when the frontier is empty: every branch of the design tree visited, nothing left silently assumed. Do not act on it until the user confirms you have reached a shared understanding.
+- 정답·범위·실행 가능성을 뒤집는 가정 최대 3개만 확인한다. 파일·환경에서 찾을 수 있는 사실은 직접 찾는다.
+- 근거가 있는 판단은 바로 제안하고 되돌릴 수 있는 선택은 가정을 남긴다. 업무상 선택이 꼭 필요한 질문만 추천안·영향과 함께 한 번에 제시한다.
+- 기본 3분·한 차례 검토로 끝내며 모든 분기를 탐색하지 않는다. 미해결 사항은 REQUIREMENTS.md에 남긴다.
+- 점검 자체를 별도 승인 관문으로 만들지 않는다. 사용자가 구현까지 요청했으면 결정된 부분부터 이어서 수행한다.

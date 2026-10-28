@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 # Human-in-the-loop reproduction loop.
+# Hackathon: user performs UI steps manually before submission is frozen.
+# Do not use for post-submission written questions or platform/security changes.
 # Copy this file, edit the steps below, and run it.
 # The agent runs the script; the user follows prompts in their terminal.
 #

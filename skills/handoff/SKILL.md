@@ -1,18 +1,11 @@
 ---
 name: handoff
-description: Compact the current conversation into a handoff document for another agent to pick up.
-argument-hint: "What will the next session be used for?"
-disable-model-invocation: true
+description: 세션을 바꿔야 할 때 현재 작업의 근거와 다음 행동만 짧은 인계 문서에 기록. 사용자가 직접 부를 때 쓴다.
 ---
 
-Write a handoff document summarising the current conversation so a fresh agent can continue the work. Save it in the project as `docs/handoff-NN.md`, where NN is the next number after the existing files (`ls docs/handoff-*.md`; start at 01).
+세션 인계가 실제 필요할 때 docs/handoff-NN.md를 만든다. 기존 번호 다음을 사용한다.
 
-Write only the current state and the next steps. Do not restate working rules: they live in `AGENTS.md`. If a new lasting rule came up in this conversation, do not put it in the handoff; ask the user whether to add one line to `AGENTS.md` instead.
-
-Do not duplicate content already captured in other artifacts (`PLAN.md`, `REQUIREMENTS.md`, `DECISIONS.md`, specs, commits, diffs). Reference them by path instead. Do not copy values that a command can show (the next decision number, line numbers); name the command or the function instead.
-
-Name only the one or two skills the next session should call first, if any.
-
-Redact any sensitive information, such as API keys, passwords, or personally identifiable information.
-
-If the user passed arguments, treat them as a description of what the next session will focus on and tailor the doc accordingly.
+- 다음 목표, 먼저 읽을 파일·함수, 막힌 점, 바로 실행할 다음 행동만 반 페이지 이내로 적는다.
+- 규칙은 AGENTS.md, 진행·검증은 PLAN.md, 요구사항·결정은 해당 문서를 참조한다. 내용·수치·전체 대화를 복제하지 않는다.
+- 다음 세션에 꼭 필요한 스킬만 1~2개 적고 자격 증명·개인정보는 남기지 않는다.
+- 인계 때문에 새 규칙 추가나 스킬 전체 실행을 요구하지 않는다. 제출물 확정 후에는 작업·답안 인계를 진행하지 않는다.
