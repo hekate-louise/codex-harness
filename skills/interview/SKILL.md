@@ -3,6 +3,9 @@ name: interview
 description: 업무 담당자 질문을 점검하거나 받은 답을 요구사항과 구현에 반영. 사용자가 직접 부를 때 쓴다.
 ---
 
+문서 경로는 PLAN.md의 매핑을 따르고, 매핑이 없으면 아래 기본 경로를 사용한다. 과제 지정 양식이 같은 역할이면 REQUIREMENTS.md·DECISIONS.md 대신 그 파일을 사용한다.
+
+
 `check`는 질문 점검, `record`는 답 기록이다. 접두사가 없어도 질문 초안인지 받은 답인지 명확하면 해당 작업을 한다. 구분이 안 될 때만 한 번 묻는다. REQUIREMENTS.md의 관련 항목과 기존 답만 읽는다.
 
 ## check
