@@ -1,0 +1,5 @@
+interface:
+  display_name: "verify"
+  short_description: "실행·독립 검증"
+policy:
+  allow_implicit_invocation: false

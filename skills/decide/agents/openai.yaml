@@ -1,0 +1,5 @@
+interface:
+  display_name: "decide"
+  short_description: "결정 기록"
+policy:
+  allow_implicit_invocation: false
