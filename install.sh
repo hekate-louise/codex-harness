@@ -37,6 +37,12 @@ if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
   echo "git 저장소를 만들었습니다 (git init)."
 fi
 
+# 임시 파일 폴더(work/)는 커밋하지 않는다.
+if ! grep -qx 'work/' .gitignore 2>/dev/null; then
+  echo 'work/' >> .gitignore
+  echo "설치: .gitignore에 work/ 추가"
+fi
+
 echo
 echo "완료. Codex를 다시 시작하면 AGENTS.md와 스킬이 적용됩니다."
 echo "이미 있던 AGENTS.md를 건너뛰었다면, 두 파일을 비교해서 합치세요."
