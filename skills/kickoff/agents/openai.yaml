@@ -1,5 +1,0 @@
-interface:
-  display_name: "kickoff"
-  short_description: "과제 분석과 질문 목록"
-policy:
-  allow_implicit_invocation: false

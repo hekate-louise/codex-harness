@@ -15,11 +15,11 @@ git clone https://github.com/hekate-louise/codex-harness /tmp/h && bash /tmp/h/i
 git clone https://github.com/hekate-louise/codex-harness work/codex-harness && bash work/codex-harness/install.sh .
 ```
 
-설치기는 AGENTS.md, 기록 템플릿 3개, 스킬 13개를 복사하고 `.gitignore`에 `work/`를 추가한다. 이미 있는 파일·스킬은 덮어쓰지 않는다. 기존 AGENTS.md가 있으면 두 파일을 비교해 합친다. 설치한 뒤 Codex를 다시 시작한다. 플랫폼의 쓰기 제한은 우회하지 말고 허용된 설치 방법을 확인한다.
+설치기는 AGENTS.md, 기록 템플릿 3개, 스킬 8개를 복사하고 `.gitignore`에 `work/`를 추가한다. 이미 있는 파일·스킬은 덮어쓰지 않는다. 기존 AGENTS.md가 있으면 두 파일을 비교해 합친다. 설치한 뒤 Codex를 다시 시작한다. 플랫폼의 쓰기 제한은 우회하지 말고 허용된 설치 방법을 확인한다.
 
 한 번에 시작하는 요청 예:
 
-> $hackathon 과제 README와 제공 파일을 확인하고 필수 요구를 정리해줘. 업무 담당자에게 물을 질문 초안과 계획을 먼저 보여 주고, 내가 승인하면 작은 흐름부터 구현해줘. 시작 시각은 ○○:○○, 마감은 ○○:○○이야.
+> 과제 README와 제공 파일을 읽고 Must, 제출물, 업무 담당자에게 확인해야 할 빈칸을 정리해줘. 계획은 내가 승인한 뒤 구현해줘. 시작 ○○:○○, 마감 ○○:○○.
 
 개별 스킬을 순서대로 호출할 필요는 없다. 이미 진행 중이면 기존 기록·코드에서 이어가며 환경 점검과 계획 작성을 처음부터 반복하지 않는다.
 
@@ -45,24 +45,21 @@ git clone https://github.com/hekate-louise/codex-harness work/codex-harness && b
 
 | 스킬 | 호출 | 하는 일 |
 |---|---|---|
-| `hackathon` | 직접 | 전체 흐름 안내 (시작 → 승인 → 구현 → 마무리) |
 | `env` | 직접 | 개발 환경 점검, 사용자 환경 질문 |
-| `kickoff` | 직접 | 과제 분석, Must·질문 초안, REQUIREMENTS 기록 |
 | `interview` | 직접 | `check`: 보내기 전 질문 점검 / `record`: 받은 답 기록 |
 | `plan` | 직접 | 계획을 PLAN.md에 저장하고 승인 받기 |
-| `decide` | 직접 | DECISIONS.md에 결정 기록 |
-| `verify` | 직접 | 실행·독립 검산·근거 기록 |
-| `wrap` | 직접 | 제출 전 점검, 결과 공유 메시지 초안 |
+| `verify` | 직접 | 사용자가 말한 위험 기준으로 실행·독립 검산·근거 기록 |
+| `wrap` | 직접 | 제출 확정 전 점검, 미결정 항목 알림, 결과 공유 메시지 초안 |
 | `explain` | 직접 | 제출 확정 전 이해도 점검 (모범 답안 없음) |
 | `handoff` | 직접 | 세션을 바꿀 때 `docs/handoff-NN.md`로 인계 |
-| `grilling` | 자동 | 계획·결정의 허점 점검 |
-| `diagnosing-bugs` | 자동 | 막힌 버그를 재현 → 가설 → 검증으로 진단 |
 | `frontend-design` | 자동 | 화면 디자인 방향 |
+
+결정 기록(DECISIONS.md)과 커밋 시점 안내는 스킬 없이 AGENTS.md 규칙으로 동작한다.
 
 ## 하네스가 스스로 정한 원칙
 화면·브라우저 자동 조작을 쓰지 않고 터미널·HTTP 검증과 사용자의 화면 확인을 조합한다. 과제 데이터를 외부로 보내지 않고 push하지 않는다. 웹 서버는 0.0.0.0에 바인딩한다. 확정 목표 15분 여유, 최소 흐름 우선, 질문은 한 번에 3개까지, 약 10분 막히면 판단하기는 운영 전략이며 성능을 보장하지 않는다. 응시 규정은 플랫폼 안내를 따른다.
 
 ## 출처와 라이선스
-- handoff, grilling, diagnosing-bugs: [mattpocock/skills](https://github.com/mattpocock/skills), MIT 원본을 바탕으로 시간·도구 경계와 Codex 흐름에 맞게 수정. 각 폴더에 원본 LICENSE 유지.
+- handoff: [mattpocock/skills](https://github.com/mattpocock/skills), MIT 원본을 바탕으로 시간·도구 경계와 Codex 흐름에 맞게 수정. 폴더에 원본 LICENSE 유지.
 - frontend-design: [anthropics/skills](https://github.com/anthropics/skills), Apache 2.0 원본을 바탕으로 업무 UI·수동 확인 중심으로 수정(2026-10-28). 원본 LICENSE.txt 유지.
 - 그 밖의 파일은 이 저장소에서 작성했다.
