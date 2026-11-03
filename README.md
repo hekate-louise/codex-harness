@@ -15,7 +15,7 @@ git clone https://github.com/hekate-louise/codex-harness /tmp/h && bash /tmp/h/i
 git clone https://github.com/hekate-louise/codex-harness work/codex-harness && bash work/codex-harness/install.sh .
 ```
 
-설치기는 AGENTS.md, 기록 템플릿 3개, 스킬 8개를 복사하고 `.gitignore`에 `work/`를 추가한다. 이미 있는 파일·스킬은 덮어쓰지 않는다. 기존 AGENTS.md가 있으면 두 파일을 비교해 합친다. 설치한 뒤 Codex를 다시 시작한다. 플랫폼의 쓰기 제한은 우회하지 말고 허용된 설치 방법을 확인한다.
+설치기는 AGENTS.md, 기록 템플릿 4개, 스킬 8개를 복사하고 `.gitignore`에 `work/`를 추가한다. 이미 있는 파일·스킬은 덮어쓰지 않는다. 기존 AGENTS.md가 있으면 두 파일을 비교해 합친다. 설치한 뒤 Codex를 다시 시작한다. 플랫폼의 쓰기 제한은 우회하지 말고 허용된 설치 방법을 확인한다.
 
 한 번에 시작하는 요청 예:
 
@@ -40,6 +40,7 @@ git clone https://github.com/hekate-louise/codex-harness work/codex-harness && b
 - REQUIREMENTS.md: 모든 요구의 ID·출처·기대 동작, 담당자 답과 가정.
 - PLAN.md: 시간 기준, 진행 기록(시각·단계·사용자 결정), 요구→구현 위치→검증 근거→상태, 중요한 실패.
 - DECISIONS.md: 중요한 선택·이유·버린 대안·한계.
+- REPORT.md: 결과 보고(문제 정의·실행 방법·기능·검증·한계)와 결과 공유 메시지. **과제 README.md는 수정하지 않는다.**
 
 과제 지정 문서가 같은 역할이면 그 파일에 기록하고 PLAN.md에 경로를 둔다. 결과·수치를 여러 곳에서 따로 관리하지 않는다.
 
