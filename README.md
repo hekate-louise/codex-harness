@@ -15,7 +15,7 @@ git clone https://github.com/hekate-louise/codex-harness /tmp/h && bash /tmp/h/i
 git clone https://github.com/hekate-louise/codex-harness work/codex-harness && bash work/codex-harness/install.sh .
 ```
 
-설치기는 AGENTS.md, 기록 템플릿 4개, 스킬 8개를 복사하고 `.gitignore`에 `work/`를 추가한다. 이미 있는 파일·스킬은 덮어쓰지 않는다. 기존 AGENTS.md가 있으면 두 파일을 비교해 합친다. 설치한 뒤 Codex를 다시 시작한다. 플랫폼의 쓰기 제한은 우회하지 말고 허용된 설치 방법을 확인한다.
+설치기는 AGENTS.md, 기록 템플릿 4개, 스킬 9개를 복사하고 `.gitignore`에 `work/`를 추가한다. 이미 있는 파일·스킬은 덮어쓰지 않는다. 기존 AGENTS.md가 있으면 두 파일을 비교해 합친다. 설치한 뒤 Codex를 다시 시작한다. 플랫폼의 쓰기 제한은 우회하지 말고 허용된 설치 방법을 확인한다.
 
 한 번에 시작하는 요청 예:
 
@@ -53,7 +53,8 @@ git clone https://github.com/hekate-louise/codex-harness work/codex-harness && b
 | `wrap` | 직접 | 제출 확정 전 점검, 미결정 항목 알림, 결과 공유 메시지 초안 |
 | `explain` | 직접 | 제출 확정 전 이해도 점검 (모범 답안 없음) |
 | `handoff` | 직접 | 세션을 바꿀 때 `docs/handoff-NN.md`로 인계 |
-| `frontend-design` | 자동 | 화면 디자인 방향 |
+| `frontend-design` | 자동 | 화면 디자인 방향, 업무 도구 디자인 기준(`design-reference.md`) |
+| `impeccable` | 직접 | 화면 점검·개선 지침. 예: `$impeccable critique index.html` (문서판, 실행 파일 없음) |
 
 결정 기록(DECISIONS.md)과 커밋 시점 안내는 스킬 없이 AGENTS.md 규칙으로 동작한다.
 
@@ -63,4 +64,5 @@ git clone https://github.com/hekate-louise/codex-harness work/codex-harness && b
 ## 출처와 라이선스
 - handoff: [mattpocock/skills](https://github.com/mattpocock/skills), MIT 원본을 바탕으로 시간·도구 경계와 Codex 흐름에 맞게 수정. 폴더에 원본 LICENSE 유지.
 - frontend-design: [anthropics/skills](https://github.com/anthropics/skills), Apache 2.0 원본을 바탕으로 업무 UI·수동 확인 중심으로 수정(2026-10-28). 원본 LICENSE.txt 유지.
+- impeccable: [pbakaus/impeccable](https://github.com/pbakaus/impeccable), Apache 2.0, 커밋 f864521의 Codex용 스킬에서 지침 문서만 가져오고 실행 파일·스크립트·훅·하위 에이전트를 뺐으며 맨 앞에 사용 규칙을 추가함(2026-11-04). 원본 LICENSE와 NOTICE.md 유지.
 - 그 밖의 파일은 이 저장소에서 작성했다.

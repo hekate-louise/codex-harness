@@ -1,0 +1,5 @@
+interface:
+  display_name: "impeccable"
+  short_description: "화면 디자인 점검과 개선 (엔진 없는 문서판)"
+policy:
+  allow_implicit_invocation: false
